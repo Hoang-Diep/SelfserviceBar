@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<title>HOME PAGE</title>
+		
+		<meta charset="utf-8">
+		<meta name="author" content="IDK WIA">
+		<meta name="description" content="HOME PAGE">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	</head>
+	<body>
+	<!-- HTML CODE BEGIN -->
+		
+		<nav>
+			<h3 hidden>NAVICATION</h3>
+			
+			<div class="logo">
+				<a href="homepage.html">
+					<span class="material-icons logo__img">local_bar</span>
+				</a>
+				<a href="homepage.html">
+					<span>Self-Service Bar</span>
+				</a>
+			</div>
+			<div class="menu">
+				<div class="menu__button">
+					<span class="material-icons">menu</span>
+					<span class="material-icons">close</span>
+				</div>
+				<ul>
+					<li><a href="../recipes.html">RECIPES</a></li>
+					<li><a href="../about.html">ABOUT</a></li>
+					<li><a href="../contact.html">CONTACT</a></li>
+				</ul>
+			</div>
+			<div class="mode-change">
+				<span class="material-icons">brightness_6</span>
+			</div>
+		</nav>
+		
+		<ul id="mobile-menu">
+			<li><a href="../recipes.html">RECIPES</a></li>
+			<li><a href="../about.html">ABOUT</a></li>
+			<li><a href="../contact.html">CONTACT</a></li>
+		</ul>
+		
+		<header class="drinks__header">
+			<div class="drinks__header__title">
+				<h1>Cocktail Name</h1>
+			</div>
+			<div class="drinks__header__img">
+				<img src="../img/old_fashioned.jpg" alt="Old Fashioned">
+			</div>
+		</header>
+		
+		<main class="drinks__main">
+			<article class="ingredients">
+				<header class="ingredients__title">
+					<h2>Ingredients</h2>
+				</header>
+				<div class="ingredients__content">
+					<div class="ingredients__content__text">
+						<ul>
+							<li class="text-items active" data-id="ingredient-1">
+								<div class="text-items__number">1.</div>
+								<div class="text-items__name">Bourbon / Rye Whiskey</div>
+								<div class="text-items__amount">60ml</div>
+							</li>
+							<li class="text-items" data-id="ingredient-2">
+								<div class="text-items__number">2.</div>
+								<div class="text-items__name">Angostura</div>
+								<div class="text-items__amount">3 dashes</div>
+							</li>
+							<li class="text-items" data-id="ingredient-3">
+								<div class="text-items__number">3.</div>
+								<div class="text-items__name">Sugar</div>
+								<div class="text-items__amount">1/2 teaspoon</div>
+							</li>
+							<li class="text-items" data-id="ingredient-4">
+								<div class="text-items__number">4.</div>
+								<div class="text-items__name">Water</div>
+								<div class="text-items__amount">1 teaspoon</div>
+							</li>
+							<li class="text-items" data-id="ingredient-5">
+								<div class="text-items__number">5.</div>
+								<div class="text-items__name">Orange</div>
+								<div class="text-items__amount">1 slice</div>
+							</li>
+						</ul>
+					</div>
+					<div class="ingredients__content__img">
+						<ul>
+							<li class="img-items active" id="ingredient-1"><img src="../img/bourbon02.jpg" alt=""></li>
+							<li class="img-items" id="ingredient-2"><img src="../img/angostura02.jpg" alt=""></li>
+							<li class="img-items" id="ingredient-3"><img src="../img/sugar.jpg" alt=""></li>
+							<li class="img-items" id="ingredient-4"><img src="../img/water.jpg" alt=""></li>
+							<li class="img-items" id="ingredient-5"><img src="../img/orange.jpg" alt=""></li>
+						</ul>
+					</div>
+				</div>
+			</article>
+			<article class="steps">
+				<header class="steps__header">
+					<h2>Steps</h2>
+				</header>
+				<div class="steps__content">
+					<ul>
+						<li>
+							<span>1.</span>
+							Add the sugar and bitters to a rocks glass, then add the water, and stir until the sugar is nearly dissolved.
+						</li>
+						<li>
+							<span>2.</span>
+							Fill the glass with large ice cubes, add the bourbon, and gently stir to combine.
+						</li>
+						<li>
+							<span>3.</span>
+							Express the oil of an orange peel over the glass, then drop in.
+						</li>
+					</ul>
+				</div>
+			</article>
+			<article class="results">
+				<h2 hidden>Results</h2>
+				<div class="results__img">
+					<img src="../img/old_fashioned.jpg" alt="Old Fashioned">
+				</div>
+			</article>
+		</main>
+		
+		<footer>
+			<h3 hidden>FOOTER</h3>
+			<div class="sns">
+				<ul>
+					<li><a href="#">FACEBOOK</a></li>
+					<li><a href="#">PINTEREST</a></li>
+					<li><a href="#">INSTAGRAM</a></li>
+				</ul>
+				<ul class="sns__mobile">
+					<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+					<li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+					<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+				</ul>
+			</div>
+			<div class="author">
+				<span>SITE BY IDK WIA</span>
+				<span>NO COPYRIGHT</span>
+			</div>
+		</footer>
+		
+	<!-- HTML CODE END -->
+		
+		
+	<!-- JAVASCRIPT CODE BEGIN -->
+		
+		<script type="text/javascript">
+			
+			// DARK-LIGHT MODE CHANGE
+			let body = document.querySelector("body");
+			let modeChange = document.querySelector(".mode-change");
+			
+			modeChange.onclick = function() {
+				body.classList.toggle("dark");
+			}
+			
+			
+			// MOBILE MENU EFFECT
+			let menuBtn = document.querySelector(".menu__button");
+			let mobileMenu = document.querySelector("#mobile-menu");
+			
+			menuBtn.onclick = function() {
+				menuBtn.classList.toggle("active");
+				mobileMenu.classList.toggle("active");
+			}
+			
+			
+			// INGREDIENTS'S SLIDE CHANGE EFFECT
+			var textItems = document.querySelectorAll(".text-items");
+			var imgItems = document.querySelectorAll(".img-items");
+			
+			for (var i = 0; i < textItems.length; i++) {
+				textItems[i].addEventListener("click", function() {
+					for (var j = 0; j < imgItems.length; j++) {
+						imgItems[j].className = "img-items"; 
+					}
+					
+					document.getElementById(this.dataset.id).className = "img-items active";
+					
+					for (var j = 0; j < textItems.length; j++) {
+						textItems[j].className = "text-items";
+					}
+					
+					this.className = "text-items active";
+				});
+			}
+		</script>
+		
+	<!-- JAVASCRIPT CODE END -->
+		
+		
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	</body>
+</html>

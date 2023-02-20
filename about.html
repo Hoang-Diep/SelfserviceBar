@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<title>ABOUT</title>
+		
+		<meta charset="utf-8">
+		<meta name="author" content="IDK WIA">
+		<meta name="description" content="ABOUT">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	</head>
+	<body>
+	<!-- HTML CODE BEGIN -->
+		
+		<nav>
+			<h3 hidden>NAVICATION</h3>
+			
+			<div class="logo">
+				<a href="index.html">
+					<span class="material-icons logo__img">local_bar</span>
+				</a>
+				<a href="index.html">
+					<span>Self-Service Bar</span>
+				</a>
+			</div>
+			<div class="menu">
+				<div class="menu__button">
+					<span class="material-icons">menu</span>
+					<span class="material-icons">close</span>
+				</div>
+				<ul>
+					<li><a href="recipes.html">RECIPES</a></li>
+					<li class="action"><a href="about.html">ABOUT</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				</ul>
+			</div>
+			<div class="mode-change">
+				<span class="material-icons">brightness_6</span>
+			</div>
+		</nav>
+		
+		<ul id="mobile-menu">
+			<li><a href="recipes.html">RECIPES</a></li>
+			<li class="action"><a href="about.html">ABOUT</a></li>
+			<li><a href="contact.html">CONTACT</a></li>
+		</ul>
+		
+		<main>
+			<h2 hidden>MAIN</h2>
+			<div class="about">
+				<article class="about__content">
+					<header class="about__content__header">
+						<h2>ABOUT</h2>
+					</header>
+					<div class="about__content__text">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</article>
+				<div class="about__img">
+					<img src="img/about_4.2.png">
+				</div>
+			</div>
+		</main>
+		
+		<footer>
+			<h3 hidden>FOOTER</h3>
+			<div class="sns">
+				<ul>
+					<li><a href="#">FACEBOOK</a></li>
+					<li><a href="#">PINTEREST</a></li>
+					<li><a href="#">INSTAGRAM</a></li>
+				</ul>
+				<ul class="sns__mobile">
+					<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+					<li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+					<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+				</ul>
+			</div>
+			<div class="author">
+				<span>SITE BY IDK WIA</span>
+				<span>NO COPYRIGHT</span>
+			</div>
+		</footer>
+		
+	<!-- HTML CODE END -->
+		
+		
+	<!-- JAVASCRIPT CODE BEGIN -->
+		
+		<script type="text/javascript">
+			
+			// DARK-LIGHT MODE CHANGE
+			let body = document.querySelector("body");
+			let modeChange = document.querySelector(".mode-change");
+			
+			modeChange.onclick = function() {
+				body.classList.toggle("dark");
+			}
+			
+			
+			// MOBILE MENU EFFECT
+			let menuBtn = document.querySelector(".menu__button");
+			let mobileMenu = document.querySelector("#mobile-menu");
+			
+			menuBtn.onclick = function() {
+				menuBtn.classList.toggle("active");
+				mobileMenu.classList.toggle("active");
+			}
+		</script>
+		
+	<!-- JAVASCRIPT CODE END -->
+		
+		
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	</body>
+</html>

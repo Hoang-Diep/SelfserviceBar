@@ -1,0 +1,1201 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@100;200&display=swap');
+
+@import "_mixin.scss";
+
+
+// RESET STYLE
+* {
+	box-sizing: border-box;
+
+	margin: 0;
+	padding: 0;
+	
+	
+	// LINKS
+	a {color: var(--clr); text-decoration: none;}
+	
+	
+	// LIST
+	ul li {list-style: none;}
+	
+	
+	// IMG
+	img {@include inheritSize; object-fit: cover;}
+	
+	
+	// INPUT
+	input, textarea {background: transparent; outline: none;}
+}
+
+
+// COLOR
+:root {
+	--bg: #fcf2e8;
+	--clr: #0d0d0d;
+}
+
+
+
+
+
+/* ========== ALL SITES BEGIN ========== */
+html {
+	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
+}
+body {
+	background: var(--bg);
+	color: var(--clr);
+	
+	font-family: 'Roboto Mono', monospace;
+	font-size: 16px;
+	
+	overflow-x: hidden;
+	
+	
+	// DARK MODE COLOR
+	&.dark {
+		--bg: #0d0d0d;
+		--clr: #fcf2e8;
+	}
+	
+	
+	// NAVICATION
+	nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		
+		display: grid;
+		grid-template-columns: 4fr 10fr 1fr;
+		
+		
+		border-bottom: 1px solid var(--clr);
+		width: 100%;
+		height: 60px;
+		
+		background: var(--bg);
+		
+		z-index: 111;
+		
+		
+		// LOGO
+		.logo {
+			@include flex(row, center, center);
+			@include inheritSize;
+			
+			color: var(--clr);
+			
+			
+			&__img {margin-right: 30px;}
+			&__text {font-weight: 600;}
+		}
+		
+		
+		// MENU
+		.menu__button {display: none;}
+		.menu ul {
+			@include flex(row, space-around, center);
+			@include inheritSize;
+			
+			border-left: 1px solid var(--clr);
+			
+			
+			// HOVER EFFECT
+			li {
+				position: relative;
+				overflow-x: hidden;
+				
+				
+				a {
+					transition-delay: 0.3s;
+					transition: 0.3s;
+					
+					&:before {
+						content: '';
+
+						position: absolute;
+						top: 0;
+						left: -100%;
+
+						@include inheritSize;
+
+						background: var(--clr);
+
+						transition: 0.3s;
+						z-index: -1;
+					}
+				}
+				
+				
+				&:hover a, &.action a {
+					color: var(--bg);
+					
+					
+					&:before {left: 0;} 
+				}
+			}
+		}
+		
+		
+		// MODE CHANGE
+		.mode-change {
+			@include flex(row, space-around, center);
+			
+			border-left: 1px solid var(--clr);
+			width: 100%;
+			height: 100%;
+			
+			cursor: pointer;
+		}
+	}
+	
+	
+	// MOBILE MENU
+	ul#mobile-menu {display: none;}
+	
+	
+	// MAIN
+	main {}
+	
+	
+	// FOOTER 
+	footer {
+		position: relative;
+		
+		display: grid;
+		grid-template-columns: 5fr 3fr;
+		
+		border-top: 1px solid var(--clr);
+		width: 100%;
+		height: 50px;
+			
+			
+		// SNS LIST
+		.sns ul:first-child {
+			@include flex(row, space-around, center);
+			@include inheritSize;
+
+
+			// HOVER EFFECT
+			li {
+				position: relative;
+				overflow-x: hidden;
+
+
+				a {
+					transition-delay: 0.3s;
+					transition: 0.3s;
+
+
+					&:before {
+						content: '';
+
+						position: absolute;
+						top: 0;
+						left: -100%;
+
+						@include inheritSize;
+
+						background: var(--clr);
+
+						transition: 0.3s;
+						z-index: -1;
+					}
+				}
+
+
+				&:hover a {
+					color: var(--bg);
+
+
+					&:before {left: 0;} 
+				}
+			}
+		}
+		.sns ul.sns__mobile {display: none;}
+
+
+		// AUTHOR
+		.author {
+			@include flex(row, center, center);
+			@include inheritSize;
+
+			border-left: 1px solid var(--clr); 
+
+
+			span:first-child {
+				border-right: 1px solid var(--clr);
+				margin-right: 20px;
+				padding-right: 20px;
+			}
+		}
+	}
+}
+
+
+// TABLET RESPONSIVE
+@media only screen and (max-width: 1024px) and (min-width: 481px) {
+	body {
+		font-size: 12px;
+		
+		
+		// NAVICATION
+		nav {
+			grid-template-columns: 5fr 8fr 1fr;
+			height: 50px;
+			
+			
+			.logo__img {margin-right: 15px;}
+		}
+		
+		
+		// FOOTER
+		footer {
+			display: block;
+			height: auto;
+			
+			
+			.sns {border-bottom: 1px solid var(--clr); height: 40px;}
+			
+			
+			.author {border: none; height: 40px;}
+		}
+	}
+}
+
+
+// MOBILE RESPONSIVE
+@media only screen and (max-width: 480px) {
+	body {
+		position: relative;
+		font-size: 14px;
+		
+		
+		// NAVICATION
+		nav {
+			grid-template-columns: 4fr 1fr 1fr;
+			height: 70px;
+			
+			
+			.logo__img {margin-right: 10px;}
+			
+			
+			.menu {
+				border-left: 1px solid var(--clr);
+				
+				
+				&__button {
+					@include flex(column, center, center);
+					@include inheritSize;
+					
+					
+					span:last-child {display: none;}
+					
+					
+					&.active {
+						
+						
+						span:first-child {display: none;}
+						span:last-child {display: block;}
+					}
+				}
+				
+				
+				ul {display: none;}
+			}
+			
+			
+			.mode-change {border: none;}
+		}
+		
+		
+		// MOBILE MENU
+		ul#mobile-menu {
+			position: fixed;
+			top: -100%;
+			left: 0;
+			
+			@include flex(column, center, center);
+			
+			width: 100%;
+			height: 100vh;
+			
+			background: var(--bg);
+			
+			transition: 0.5s;
+			z-index: 11;
+			
+			
+			li {
+				margin-bottom: 60px; 
+				font-size: 2rem;
+				
+				
+				&:last-child {margin-bottom: 0;}
+				
+				
+				&.action a {background: var(--clr); color: var(--bg);}
+			}
+			
+			
+			&.active {top: 0;}
+		}
+		
+		
+		// FOOTER
+		footer {
+			display: block;
+			height: auto;
+			
+			
+			.sns {
+				
+				
+				ul:first-child {display: none;}
+				
+				
+				ul.sns__mobile {
+					@include flex(row, space-around, center);
+					@include inheritSize;
+					
+					border-bottom: 1px solid var(--clr);
+					height: 50px;
+					
+					
+					li {font-size: 1.6rem;}
+				}
+			}
+			
+			
+			.author {border: none; height: 50px;}
+		}
+	}
+}
+
+/* ========== ALL SITES END ========== */
+
+
+
+
+
+/* ========== HOMEPAGE BEGIN ========== */
+header.homepage__header {
+	display: grid;
+	grid-template-columns: 4fr 11fr;
+	
+	border-bottom: 1px solid var(--clr);
+	width: 100%;
+	height: 100vh;
+	
+	
+	.header--left {
+		position: relative;
+		@include inheritSize;
+				
+		z-index: 1;
+		
+		
+		.logo-container {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			
+			@include flex(row, center, center);
+			
+			width: 1px;
+			height: 1px;
+			
+			
+			.logo {
+				position: absolute;
+				
+				@include flex(row, center, center);
+				
+				border-radius: 50%;
+				border: 1px solid var(--clr);
+				
+				width: 300px;
+				height: 300px;
+				
+				background: var(--bg);
+				
+				z-index: 111;
+				
+				
+				span {font-size: 10rem;}
+			}
+		}
+	}
+	
+	
+	.header--right {
+		position: relative;
+		
+		border-left: 1px solid var(--clr);
+		
+		@include flex(column, center, center);
+		@include inheritSize;
+		
+		z-index: 0;
+		
+		
+		&__title {
+			width: 600px;
+			
+			
+			h1 {
+				margin-top: 60px;
+
+				font-family: 'Fira Sans Extra Condensed', sans-serif;
+				font-size: 10rem;
+				font-weight: 200;
+				text-align: right;
+
+
+				span {display: block;}
+			}
+		}
+		
+		
+		&__link {
+			width: 600px;
+			margin-top: 100px;
+			
+			text-align: right;
+			
+			
+			a {
+				transition: 0.3s;
+				
+				
+				&:hover {font-weight: 700;}
+				
+				
+				.arrow {
+					position: relative;
+
+					display: inline-block;
+
+					width: 50px;
+					height: 1px;
+
+					background: var(--clr);
+
+
+					&:before {
+						content: '';
+
+						position: absolute;
+						top: 50%;
+						right: 0;
+						transform: translateY(-50%) rotate(-45deg);
+
+						border-right: 2px solid var(--clr);
+						width: 7px;
+						height: 7px;
+					}
+				}
+			}
+		}
+	}
+}
+main.homepage__main {
+	width: 100%;
+	height: 100vh;
+	
+	
+	.site-about {
+		@include flex(column, center, center);
+		@include inheritSize;
+		
+		max-width: 1000px;
+		margin: 0 auto;
+		
+		
+		&__title {
+			margin-bottom: 100px;
+			
+			
+			h2 {font-size: 5rem; font-weight: 400;}
+		}
+		
+		
+		&__content {text-align: center; line-height: 1.6;}
+	}
+}
+
+/* ========== HOMEPAGE END ========== */
+
+
+
+
+
+/* ========== RECIPES SITE BEGIN ========== */
+header.recipes__header {
+	@include flex(row, center, center);
+	
+	width: 100%;
+	height: 300px;
+	margin-top: 60px;
+	
+	
+	h1 {font-size: 3.5rem; font-weight: 300; letter-spacing: 10px;}
+}
+main.recipes__main {
+	position: relative;
+	
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 400px);
+	grid-gap: 60px 30px;
+	
+	width: 90%;
+	max-width: 1250px;
+	height: 100%;
+	margin: auto;
+	margin-bottom: 100px;
+	
+	
+	.card {
+		position: relative;
+		
+		@include inheritSize;
+		
+		
+		a {
+			position: relative;
+			
+			@include flex(colum, center, center);
+			@include inheritSize;
+			
+			overflow: hidden;
+			
+			
+			// OPACITY SCENE
+			&:before {
+				content: '';
+				
+				@include duplicate;
+				
+				background: #000;
+				
+				opacity: 0;
+				transition: 0.2s;
+			}
+			
+			
+			// IMG
+			img {transition: 0.3s;}
+			
+			
+			// CARD CONTENT
+			.card__content {
+				position: absolute;
+				
+				@include flex(row, center, center);
+				
+				width: 80%;
+				height: 80%;
+				
+				color: #fff;
+				
+				text-align: center;
+				
+				opacity: 0;
+				transition: 0.3s;
+				
+				
+				h3 {font-weight: 300;}
+				
+				
+				// FOR CARD CONTENT BORDER ANIMATE
+				&:before {
+					content: '';
+					
+					@include duplicate;
+					
+					transform: scaleX(0);
+					
+					border-top: 1px solid #fff;
+					border-bottom: 1px solid #fff;
+					
+					transition: 0.4s;
+					transition-delay: 0.3s;
+				}
+				&:after {
+					content: '';
+					
+					@include duplicate;
+					
+					transform: scaleY(0);
+					
+					border-left: 1px solid #fff;
+					border-right: 1px solid #fff;
+					
+					transition: 0.4s;
+					transition-delay: 0.3s;
+				}
+			}
+			
+			
+			// HOVER ANIMATION
+			&:hover {
+				
+				
+				// OPACITY SCENE ANIMATION
+				&:before {opacity: 0.6;}
+				
+				
+				// IMG ANIMATION
+				img {width: 120%; height: 120%;}
+				
+				
+				// CARD CONTENT ANIMATION
+				.card__content {
+					opacity: 1;
+					transition-delay: 0.3s;
+					
+					&:before {transform: scaleX(0.9)}
+					&:after {transform: scaleY(0.9)}
+				}
+			}
+		}
+	}
+}
+
+
+// TABLET RESPONSIVE
+@media only screen and (max-width: 1024px) and (min-width: 481px) {
+	main.recipes__main {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(4, 400px);
+		
+		width: 80%;
+	}
+}
+
+
+// MOBILE RESPONSIVE
+@media only screen and (max-width: 480px) {
+	header.recipes__header {
+		height: 200px;
+		
+		
+		h1 {font-size: 2rem;}
+	}
+	
+	main.recipes__main {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(8, 400px);
+		
+		width: 70%;
+		margin-bottom: 50px;
+	}
+}
+
+/* ========== RECIPES SITE END ========== */
+
+
+
+
+
+/* ========== ABOUT SITE BEGIN ========== */
+.about {
+	display: grid;
+	grid-template-columns: 5fr 3fr;
+	
+	width: 100%;
+	height: calc(100vh - 60px);
+	margin-top: 60px;
+	
+	
+	// ABOUT IMG
+	&__img {
+		border-left: 1px solid var(--clr);
+		@include inheritSize;
+		
+		z-index: -1;
+	}
+	
+	
+	// ABOUT CONTENT
+	&__content {
+		@include inheritSize;
+		
+		
+		// ABOUT CONTENT HEADER
+		&__header {
+			@include flex(row, center, center);
+			
+			border-bottom: 1px solid var(--clr);
+			width: 100%;
+			height: 100px;
+			
+			
+			h2 {font-size: 3rem; font-weight: 400;}
+		}
+		
+		
+		// ABOUT CONTENT TEXT
+		&__text {
+			padding: 50px;
+			
+			
+			p {margin: 15px 0; line-height: 1.7;}
+		}
+	}
+}
+
+
+// TABLET RESPONSIVE
+@media only screen and (max-width: 1024px) and (min-width: 481px) {
+	.about {
+		display: block;
+		
+		height: auto;
+		
+		
+		&__img {border-left: 0; border-top: 1px solid var(--clr);}
+	}
+}
+
+
+// MOBILE RESPONSIVE
+@media only screen and (max-width: 480px) {
+	.about {
+		display: block;
+		
+		height: auto;
+		
+		
+		&__img {
+			@include flex(row, center, center);
+			
+			border-left: 0; 
+			border-top: 1px solid var(--clr);
+		}
+	}
+}
+
+/* ========== ABOUT SITE END ========== */
+
+
+
+
+
+/* ========== CONTACT SITE BEGIN ========== */
+.contact {
+	width: 90%;
+	max-width: 1250px;
+	margin: 60px auto;
+	
+	
+	// CONTACT HEADER
+	&__header {
+		@include flex(row, center, center);
+		
+		width: 100%;
+		height: 300px;
+		margin: 0 auto;
+		
+		
+		h1 {font-size: 7rem; font-weight: 400;}
+	}
+	
+	
+	// CONTACT CONTAINER
+	&__container {
+		display: grid;
+		grid-template-columns: 4fr 3fr 6fr;
+		
+		width: 100%;
+		
+		
+		// SPACE
+		.space {
+			@include flex(row, center, center); 
+			@include inheritSize;
+			
+			font-size: 1.3rem;
+		}
+		
+		
+		// CONTACT METHODS
+		.contact__methods {
+			@include flex(column, center, center);
+			
+			font-size: 1rem;
+			
+			
+			a {
+				@include flex(row, space-between, center); 
+				
+				width: 100%;
+				margin: 25px 0;
+				
+				
+				span:first-child {margin-right: 10px; font-size: 0.9rem; font-weight: 700;}	
+			}
+		}
+		
+		
+		// CONTACT FORM
+		.contact__form form {
+			@include inheritSize;
+			
+			
+			// NAME & EMAIL
+			fieldset:nth-child(1), fieldset:nth-child(2) {
+				@include flex(row, none, center);
+				
+				border: none;
+				border-bottom: 1px solid var(--clr);
+				
+				
+				// LABEL
+				label {
+					width: 60px; 
+					
+					font-size: 0.8rem;
+					font-weight: 700;
+				}
+				
+				
+				// INPUT
+				input {
+					border: none;
+					
+					width: 100%;
+					height: 40px;
+					margin-left: 15px;
+					
+					font-family: 'Roboto Mono', monospace;
+					font-size: 1rem;
+					
+					
+					&:focus {border: none;}
+				}
+			}
+			
+			
+			// MESSAGE
+			fieldset:nth-child(3) {
+				@include flex(column, none, flex-start);
+				
+				border: none;
+				
+				width: 100%;
+				height: 200px;
+				margin: 10px 0;
+				padding: 10px 0;
+				
+				
+				label {font-size: 0.8rem; font-weight: 700;}
+				
+				
+				textarea {
+					@include inheritSize;
+					
+					margin-top: 10px;
+					padding: 10px;
+					
+					font-family: 'Roboto Mono', monospace;
+					font-size: 1rem;
+				}
+			}
+			
+			
+			// SUBMIT
+			button {
+				border: none;
+				width: 100%;
+				padding: 15px;
+				
+				background: var(--clr);
+				color: var(--bg);
+				
+				font-family: 'Roboto Mono', monospace;
+				font-size: 0.8rem;
+				font-weight: 700;
+			}
+		}
+	}
+}
+
+
+// TABLET RESPONSIVE
+@media only screen and (max-width: 1024px) and (min-width: 481px) {
+	.contact {
+		
+		
+		// CONTACT HEADER
+		&__header {height: 200px;}
+		&__header h1 {font-size: 5rem;}
+		
+		
+		// CONTACT CONTAINER
+		&__container {
+			grid-template-columns: 1fr;
+			grid-template-rows: 3fr 1fr 6fr;
+		}
+	}
+}
+
+
+// MOBILE RESPONSIVE
+@media only screen and (max-width: 480px) {
+	.contact {
+		
+		
+		// CONTACT HEADER
+		&__header {height: 200px;}
+		&__header h1 {font-size: 3rem;}
+		
+		
+		// CONTACT CONTAINER
+		&__container {
+			grid-template-columns: 1fr;
+			grid-template-rows: 3fr 1fr 6fr;
+		}
+	}
+}
+
+/* ========== CONTACT SITE END ========== */
+
+
+
+
+
+/* ========== DRINKS SITE BEGIN ========== */
+
+// DRINKS HEADER
+.drinks__header {
+	@include flex(row, center, center);
+	
+	border-bottom: 1px solid var(--clr);
+	width: 100%;
+	height: 100vh;
+	
+	
+	// DRINKS HEADER TITLE
+	&__title {
+		@include flex(row, none, center);
+		
+		width: 50%;
+		height: 100%;
+		
+		
+		h1 {font-size: 7rem;}
+	}
+	
+	
+	// DRINKS HEADER IMG
+	.drinks__header__img {width: 400px; height: 550px;}
+}
+
+// DRINKS MAIN
+main.drinks__main {
+	
+	
+	// INGREDIENTS
+	.ingredients {
+		border-bottom: 1px solid var(--clr);
+		width: 100%;
+		
+		
+		// INGREDIENTS TITLE
+		&__title {
+			@include flex(row, center, center);
+			
+			border-bottom: 1px solid var(--clr);
+			width: 100%;
+			height: 150px;
+			
+			
+			h2 {font-size: 3rem; font-weight: 400;}
+		}
+		
+		
+		// INGREDIENTS CONTENT
+		&__content {
+			display: grid;
+			grid-template-columns: auto 400px;
+			
+			width: 100%;
+			
+			
+			// INGREDIENTS CONTENT TEXT
+			&__text {
+				border-right: 1px solid var(--clr);
+				min-height: 450px;
+				
+				
+				.text-items {
+					display: grid;
+					grid-template-columns: 100px 2fr 1fr;
+
+					border-bottom: 1px solid var(--clr);
+					width: 100%;
+					height: 70px;
+					
+					transition: 0.1s;
+					
+					
+					// HOVER & ACTIVE
+					&:hover, &.active {background: var(--clr); color: var(--bg);}
+
+
+					// LAST ITEMS
+					/*&:last-child {border-bottom: none;}*/
+
+
+					// INGREDIENT TEXT ITEMS ALL DIV
+					div {@include inheritSize;}
+
+
+					// INGREDIENT TEXT ITEMS NUMBER
+					&__number {
+						@include flex(row, flex-end, center);
+
+						padding: 0 10px;
+
+						font-family: 'Courier New';
+						font-size: 1.5rem;
+						font-weight: 700;
+						text-align: right;
+					}
+
+
+					// INGREDIENT TEXT ITEMS NAME
+					&__name {@include flex(row, unset, center); padding-left: 10px;}
+
+
+					// INGREDIENT TEXT ITEMS AMOUNT
+					&__amount {@include flex(row, unset, center);}
+				}
+			}
+			
+			
+			// INGREDIENTS CONTENT IMG
+			&__img {
+				position: relative;
+				
+				@include inheritSize;
+				
+				
+				li {
+					@include duplicate;
+					
+					opacity: 0;
+					transition: 0.5s;
+					
+					
+					&.active {opacity: 1; transition-delay: 0.2s;}
+				}
+			}
+		}
+	}
+	
+	
+	// STEPS
+	.steps {
+		border-bottom: 1px solid var(--clr);
+		
+		// STEPS HEADER
+		&__header {
+			@include flex(row, center, center);
+			
+			border-bottom: 1px solid var(--clr);
+			width: 100%;
+			height: 150px;
+			
+			
+			h2 {font-size: 3rem; font-weight: 400;}
+		}
+		
+		
+		// STEPS CONTENT 
+		&__content {
+			@include flex(column, none, center);
+			
+			min-height: 400px;
+			padding: 25px;
+			
+			
+			ul li {
+				display: grid;
+				grid-template-columns: 40px auto;
+				
+				padding: 15px 0;
+				
+				
+				span {font-family: 'Courier New'; font-size: 1.5rem; font-weight: 700;}
+			}
+		}
+	}
+	
+	
+	// RESULTS
+	.results {
+		@include flex(row, center, center);
+		
+		width: 100%;
+		height: 100vh;
+		
+		
+		&__img {width: 400px; height: 550px;}
+	}
+}
+
+
+// TABLET RESPONSIVE
+@media only screen and (max-width: 1024px) and (min-width: 481px) {
+	.drinks__header {
+		@include flex(column, center, center);
+		
+		height: auto;
+		padding: 60px 0;
+		
+		
+		&__title {
+			@include flex(row, center, center);
+			width: 90%; 
+			height: auto;
+			margin: 50px auto;
+			
+			
+			h1 {font-size: 5rem;}
+		}
+	}
+}
+
+
+// MOBILE RESPONSIVE
+@media only screen and (max-width: 480px) {
+	.drinks__header {
+		@include flex(column, center, center);
+		
+		height: auto;
+		padding: 60px 0;
+		
+		
+		&__title {
+			@include flex(row, center, center);
+			width: 100%; 
+			height: auto;
+			margin: 50px auto;
+			
+			
+			h1 {font-size: 3rem;}
+		}
+	
+	
+		// DRINKS HEADER IMG
+		&__img {width: 200px; height: 270px;}
+	}
+}
+
+/* ========== DRINKS SITE END ========== */

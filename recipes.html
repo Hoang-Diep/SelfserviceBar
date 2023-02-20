@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<title>RECIPES</title>
+		
+		<meta charset="utf-8">
+		<meta name="author" content="IDK WIA">
+		<meta name="description" content="RECIPES">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	</head>
+	<body>
+	<!-- HTML CODE BEGIN -->
+		
+		<nav>
+			<h3 hidden>NAVICATION</h3>
+			
+			<div class="logo">
+				<a href="index.html">
+					<span class="material-icons logo__img">local_bar</span>
+				</a>
+				<a href="index.html">
+					<span>Self-Service Bar</span>
+				</a>
+			</div>
+			<div class="menu">
+				<div class="menu__button">
+					<span class="material-icons">menu</span>
+					<span class="material-icons">close</span>
+				</div>
+				<ul>
+					<li class="action"><a href="#">RECIPES</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				</ul>
+			</div>
+			<div class="mode-change">
+				<span class="material-icons">brightness_6</span>
+			</div>
+		</nav>
+		
+		<ul id="mobile-menu">
+			<li class="action"><a href="#">RECIPES</a></li>
+			<li><a href="about.html">ABOUT</a></li>
+			<li><a href="contact.html">CONTACT</a></li>
+		</ul>
+		
+		<header class="recipes__header">
+			<h1>RECIPES</h1>
+		</header>
+		
+		<main class="recipes__main">
+			<section class="card">
+				<a href="drinks/old_fashioned.html">
+					<img src="img/old_fashioned.jpg" alt="Old Fashioned">
+					<div class="card__content">
+						<h3>Old Fashioned</h3>
+					</div>
+				</a>
+			</section>
+			<section class="card">
+				<a href="#">
+					<img src="img/black_velvet.jpg" alt="Black Velvet">
+					<div class="card__content">
+						<h3>Black Velvet</h3>
+					</div>
+				</a>
+			</section>
+			<section class="card">
+				<a href="#">
+					<img src="img/espresso_martini.jpg" alt="Espresso Martini">
+					<div class="card__content">
+						<h3>Espresso Martini</h3>
+					</div>
+				</a>
+			</section>
+			<section class="card">
+				<a href="#">
+					<img src="img/gin_fizz.jpg" alt="Gin Fizz">
+					<div class="card__content">
+						<h3>Gin Fizz</h3>
+					</div>
+				</a>
+			</section>
+			<section class="card">
+				<a href="#">
+					<img src="img/highball.jpg" alt="Highball">
+					<div class="card__content">
+						<h3>Highball</h3>
+					</div>
+				</a>
+			</section>
+			<section class="card">
+				<a href="#">
+					<img src="img/white-russian.jpg" alt="White Russian">
+					<div class="card__content">
+						<h3>White Russian</h3>
+					</div>
+				</a>
+			</section>
+			<section class="card">
+				<a href="#">
+					<img src="img/whisky_sour.jpg" alt="Whisky Sour">
+					<div class="card__content">
+						<h3>Whisky Sour</h3>
+					</div>
+				</a>
+			</section>
+			<section class="card">
+				<a href="#">
+					<img src="img/irish_coffee.jpg" alt="Irish Coffee">
+					<div class="card__content">
+						<h3>Irish Coffee</h3>
+					</div>
+				</a>
+			</section>
+		</main>
+		
+		<footer>
+			<h3 hidden>FOOTER</h3>
+			<div class="sns">
+				<ul>
+					<li><a href="#">FACEBOOK</a></li>
+					<li><a href="#">PINTEREST</a></li>
+					<li><a href="#">INSTAGRAM</a></li>
+				</ul>
+				<ul class="sns__mobile">
+					<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+					<li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+					<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+				</ul>
+			</div>
+			<div class="author">
+				<span>SITE BY IDK WIA</span>
+				<span>NO COPYRIGHT</span>
+			</div>
+		</footer>
+		
+	<!-- HTML CODE END -->
+		
+		
+	<!-- JAVASCRIPT CODE BEGIN -->
+		
+		<script type="text/javascript">
+			
+			// DARK-LIGHT MODE CHANGE
+			let body = document.querySelector("body");
+			let modeChange = document.querySelector(".mode-change");
+			
+			modeChange.onclick = function() {
+				body.classList.toggle("dark");
+			}
+			
+			
+			// MOBILE MENU EFFECT
+			let menuBtn = document.querySelector(".menu__button");
+			let mobileMenu = document.querySelector("#mobile-menu");
+			
+			menuBtn.onclick = function() {
+				menuBtn.classList.toggle("active");
+				mobileMenu.classList.toggle("active");
+			}
+			
+		</script>
+		
+	<!-- JAVASCRIPT CODE END -->
+		
+		
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	</body>
+</html>

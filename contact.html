@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<title>HOME PAGE</title>
+		
+		<meta charset="utf-8">
+		<meta name="author" content="IDK WIA">
+		<meta name="description" content="HOME PAGE">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	</head>
+	<body>
+	<!-- HTML CODE BEGIN -->
+		
+		<nav>
+			<h3 hidden>NAVICATION</h3>
+			
+			<div class="logo">
+				<a href="index.html">
+					<span class="material-icons logo__img">local_bar</span>
+				</a>
+				<a href="index.html">
+					<span>Self-Service Bar</span>
+				</a>
+			</div>
+			<div class="menu">
+				<div class="menu__button">
+					<span class="material-icons">menu</span>
+					<span class="material-icons">close</span>
+				</div>
+				<ul>
+					<li><a href="recipes.html">RECIPES</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li class="action"><a href="#">CONTACT</a></li>
+				</ul>
+			</div>
+			<div class="mode-change">
+				<span class="material-icons">brightness_6</span>
+			</div>
+		</nav>
+		
+		<ul id="mobile-menu">
+			<li><a href="#">RECIPES</a></li>
+			<li><a href="about.html">ABOUT</a></li>
+			<li class="action"><a href="#">CONTACT</a></li>
+		</ul>
+		
+		<main>
+			<div class="contact">
+				<header class="contact__header">
+					<h1>CONTACT US</h1>
+				</header>
+				<div class="contact__container">
+					<div class="contact__methods">
+						<ul>
+							<li>
+								<a href="tel: 0123-456-789">
+									<span>Tel:</span>
+									<span>0123-456-789</span>
+								</a>
+							</li>
+							<li>
+								<a href="mailto: nothing@example.com">
+									<span>Email:</span>
+									<span>nothing@example.com</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="space">or</div>
+					
+					<div class="contact__form">
+						<form>
+							<fieldset>
+								<label for="name">Name:</label>
+								<input id="name" name="name" type="text">
+							</fieldset>
+							<fieldset>
+								<label for="email">Email:</label>
+								<input id="email" name="email" type="email">
+							</fieldset>
+							<fieldset>
+								<label for="message">Message</label>
+								<textarea id="message" name="message"></textarea>
+							</fieldset>
+							<button>Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+		
+		<footer>
+			<h3 hidden>FOOTER</h3>
+			<div class="sns">
+				<ul>
+					<li><a href="#">FACEBOOK</a></li>
+					<li><a href="#">PINTEREST</a></li>
+					<li><a href="#">INSTAGRAM</a></li>
+				</ul>
+				<ul class="sns__mobile">
+					<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+					<li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+					<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+				</ul>
+			</div>
+			<div class="author">
+				<span>SITE BY IDK WIA</span>
+				<span>NO COPYRIGHT</span>
+			</div>
+		</footer>
+		
+	<!-- HTML CODE END -->
+		
+		
+	<!-- JAVASCRIPT CODE BEGIN -->
+		
+		<script type="text/javascript">
+			// DARK-LIGHT MODE CHANGE
+			let body = document.querySelector("body");
+			let modeChange = document.querySelector(".mode-change");
+			
+			modeChange.onclick = function() {
+				body.classList.toggle("dark");
+			}
+			
+			// MOBILE MENU EFFECT
+			let menuBtn = document.querySelector(".menu__button");
+			let mobileMenu = document.querySelector("#mobile-menu");
+			
+			menuBtn.onclick = function() {
+				menuBtn.classList.toggle("active");
+				mobileMenu.classList.toggle("active");
+			}
+			
+		</script>
+		
+	<!-- JAVASCRIPT CODE END -->
+		
+		
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	</body>
+</html>

@@ -1,0 +1,974 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@100;200&display=swap");
+/* line 8, SelfserviceBar/css/style.scss */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+  /* line 16, SelfserviceBar/css/style.scss */
+  * a {
+    color: var(--clr);
+    text-decoration: none; }
+  /* line 20, SelfserviceBar/css/style.scss */
+  * ul li {
+    list-style: none; }
+  /* line 24, SelfserviceBar/css/style.scss */
+  * img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+  /* line 28, SelfserviceBar/css/style.scss */
+  * input, * textarea {
+    background: transparent;
+    outline: none; }
+
+/* line 33, SelfserviceBar/css/style.scss */
+:root {
+  --bg: #fcf2e8;
+  --clr: #0d0d0d; }
+
+/* ========== ALL SITES BEGIN ========== */
+/* line 43, SelfserviceBar/css/style.scss */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory; }
+
+/* line 47, SelfserviceBar/css/style.scss */
+body {
+  background: var(--bg);
+  color: var(--clr);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  overflow-x: hidden; }
+  /* line 58, SelfserviceBar/css/style.scss */
+  body.dark {
+    --bg: #0d0d0d;
+    --clr: #fcf2e8; }
+  /* line 65, SelfserviceBar/css/style.scss */
+  body nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 4fr 10fr 1fr;
+    border-bottom: 1px solid var(--clr);
+    width: 100%;
+    height: 60px;
+    background: var(--bg);
+    z-index: 111; }
+    /* line 84, SelfserviceBar/css/style.scss */
+    body nav .logo {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      color: var(--clr); }
+      /* line 91, SelfserviceBar/css/style.scss */
+      body nav .logo__img {
+        margin-right: 30px; }
+      /* line 92, SelfserviceBar/css/style.scss */
+      body nav .logo__text {
+        font-weight: 600; }
+    /* line 97, SelfserviceBar/css/style.scss */
+    body nav .menu__button {
+      display: none; }
+    /* line 98, SelfserviceBar/css/style.scss */
+    body nav .menu ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      border-left: 1px solid var(--clr); }
+      /* line 106, SelfserviceBar/css/style.scss */
+      body nav .menu ul li {
+        position: relative;
+        overflow-x: hidden; }
+        /* line 111, SelfserviceBar/css/style.scss */
+        body nav .menu ul li a {
+          transition-delay: 0.3s;
+          transition: 0.3s; }
+          /* line 115, SelfserviceBar/css/style.scss */
+          body nav .menu ul li a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--clr);
+            transition: 0.3s;
+            z-index: -1; }
+        /* line 132, SelfserviceBar/css/style.scss */
+        body nav .menu ul li:hover a, body nav .menu ul li.action a {
+          color: var(--bg); }
+          /* line 136, SelfserviceBar/css/style.scss */
+          body nav .menu ul li:hover a:before, body nav .menu ul li.action a:before {
+            left: 0; }
+    /* line 143, SelfserviceBar/css/style.scss */
+    body nav .mode-change {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      border-left: 1px solid var(--clr);
+      width: 100%;
+      height: 100%;
+      cursor: pointer; }
+  /* line 156, SelfserviceBar/css/style.scss */
+  body ul#mobile-menu {
+    display: none; }
+  /* line 164, SelfserviceBar/css/style.scss */
+  body footer {
+    position: relative;
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    border-top: 1px solid var(--clr);
+    width: 100%;
+    height: 50px; }
+    /* line 176, SelfserviceBar/css/style.scss */
+    body footer .sns ul:first-child {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 100%; }
+      /* line 182, SelfserviceBar/css/style.scss */
+      body footer .sns ul:first-child li {
+        position: relative;
+        overflow-x: hidden; }
+        /* line 187, SelfserviceBar/css/style.scss */
+        body footer .sns ul:first-child li a {
+          transition-delay: 0.3s;
+          transition: 0.3s; }
+          /* line 192, SelfserviceBar/css/style.scss */
+          body footer .sns ul:first-child li a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--clr);
+            transition: 0.3s;
+            z-index: -1; }
+        /* line 209, SelfserviceBar/css/style.scss */
+        body footer .sns ul:first-child li:hover a {
+          color: var(--bg); }
+          /* line 213, SelfserviceBar/css/style.scss */
+          body footer .sns ul:first-child li:hover a:before {
+            left: 0; }
+    /* line 217, SelfserviceBar/css/style.scss */
+    body footer .sns ul.sns__mobile {
+      display: none; }
+    /* line 221, SelfserviceBar/css/style.scss */
+    body footer .author {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      border-left: 1px solid var(--clr); }
+      /* line 228, SelfserviceBar/css/style.scss */
+      body footer .author span:first-child {
+        border-right: 1px solid var(--clr);
+        margin-right: 20px;
+        padding-right: 20px; }
+
+@media only screen and (max-width: 1024px) and (min-width: 481px) {
+  /* line 240, SelfserviceBar/css/style.scss */
+  body {
+    font-size: 12px; }
+    /* line 245, SelfserviceBar/css/style.scss */
+    body nav {
+      grid-template-columns: 5fr 8fr 1fr;
+      height: 50px; }
+      /* line 250, SelfserviceBar/css/style.scss */
+      body nav .logo__img {
+        margin-right: 15px; }
+    /* line 255, SelfserviceBar/css/style.scss */
+    body footer {
+      display: block;
+      height: auto; }
+      /* line 260, SelfserviceBar/css/style.scss */
+      body footer .sns {
+        border-bottom: 1px solid var(--clr);
+        height: 40px; }
+      /* line 263, SelfserviceBar/css/style.scss */
+      body footer .author {
+        border: none;
+        height: 40px; } }
+
+@media only screen and (max-width: 480px) {
+  /* line 271, SelfserviceBar/css/style.scss */
+  body {
+    position: relative;
+    font-size: 14px; }
+    /* line 277, SelfserviceBar/css/style.scss */
+    body nav {
+      grid-template-columns: 4fr 1fr 1fr;
+      height: 70px; }
+      /* line 282, SelfserviceBar/css/style.scss */
+      body nav .logo__img {
+        margin-right: 10px; }
+      /* line 285, SelfserviceBar/css/style.scss */
+      body nav .menu {
+        border-left: 1px solid var(--clr); }
+        /* line 289, SelfserviceBar/css/style.scss */
+        body nav .menu__button {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%; }
+          /* line 294, SelfserviceBar/css/style.scss */
+          body nav .menu__button span:last-child {
+            display: none; }
+          /* line 300, SelfserviceBar/css/style.scss */
+          body nav .menu__button.active span:first-child {
+            display: none; }
+          /* line 301, SelfserviceBar/css/style.scss */
+          body nav .menu__button.active span:last-child {
+            display: block; }
+        /* line 306, SelfserviceBar/css/style.scss */
+        body nav .menu ul {
+          display: none; }
+      /* line 310, SelfserviceBar/css/style.scss */
+      body nav .mode-change {
+        border: none; }
+    /* line 315, SelfserviceBar/css/style.scss */
+    body ul#mobile-menu {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background: var(--bg);
+      transition: 0.5s;
+      z-index: 11; }
+      /* line 331, SelfserviceBar/css/style.scss */
+      body ul#mobile-menu li {
+        margin-bottom: 60px;
+        font-size: 2rem; }
+        /* line 336, SelfserviceBar/css/style.scss */
+        body ul#mobile-menu li:last-child {
+          margin-bottom: 0; }
+        /* line 339, SelfserviceBar/css/style.scss */
+        body ul#mobile-menu li.action a {
+          background: var(--clr);
+          color: var(--bg); }
+      /* line 343, SelfserviceBar/css/style.scss */
+      body ul#mobile-menu.active {
+        top: 0; }
+    /* line 348, SelfserviceBar/css/style.scss */
+    body footer {
+      display: block;
+      height: auto; }
+      /* line 356, SelfserviceBar/css/style.scss */
+      body footer .sns ul:first-child {
+        display: none; }
+      /* line 359, SelfserviceBar/css/style.scss */
+      body footer .sns ul.sns__mobile {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid var(--clr);
+        height: 50px; }
+        /* line 367, SelfserviceBar/css/style.scss */
+        body footer .sns ul.sns__mobile li {
+          font-size: 1.6rem; }
+      /* line 372, SelfserviceBar/css/style.scss */
+      body footer .author {
+        border: none;
+        height: 50px; } }
+
+/* ========== ALL SITES END ========== */
+/* ========== HOMEPAGE BEGIN ========== */
+/* line 384, SelfserviceBar/css/style.scss */
+header.homepage__header {
+  display: grid;
+  grid-template-columns: 4fr 11fr;
+  border-bottom: 1px solid var(--clr);
+  width: 100%;
+  height: 100vh; }
+  /* line 393, SelfserviceBar/css/style.scss */
+  header.homepage__header .header--left {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1; }
+    /* line 400, SelfserviceBar/css/style.scss */
+    header.homepage__header .header--left .logo-container {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 1px;
+      height: 1px; }
+      /* line 412, SelfserviceBar/css/style.scss */
+      header.homepage__header .header--left .logo-container .logo {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid var(--clr);
+        width: 300px;
+        height: 300px;
+        background: var(--bg);
+        z-index: 111; }
+        /* line 428, SelfserviceBar/css/style.scss */
+        header.homepage__header .header--left .logo-container .logo span {
+          font-size: 10rem; }
+  /* line 434, SelfserviceBar/css/style.scss */
+  header.homepage__header .header--right {
+    position: relative;
+    border-left: 1px solid var(--clr);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 0; }
+    /* line 445, SelfserviceBar/css/style.scss */
+    header.homepage__header .header--right__title {
+      width: 600px; }
+      /* line 449, SelfserviceBar/css/style.scss */
+      header.homepage__header .header--right__title h1 {
+        margin-top: 60px;
+        font-family: 'Fira Sans Extra Condensed', sans-serif;
+        font-size: 10rem;
+        font-weight: 200;
+        text-align: right; }
+        /* line 458, SelfserviceBar/css/style.scss */
+        header.homepage__header .header--right__title h1 span {
+          display: block; }
+    /* line 463, SelfserviceBar/css/style.scss */
+    header.homepage__header .header--right__link {
+      width: 600px;
+      margin-top: 100px;
+      text-align: right; }
+      /* line 470, SelfserviceBar/css/style.scss */
+      header.homepage__header .header--right__link a {
+        transition: 0.3s; }
+        /* line 474, SelfserviceBar/css/style.scss */
+        header.homepage__header .header--right__link a:hover {
+          font-weight: 700; }
+        /* line 477, SelfserviceBar/css/style.scss */
+        header.homepage__header .header--right__link a .arrow {
+          position: relative;
+          display: inline-block;
+          width: 50px;
+          height: 1px;
+          background: var(--clr); }
+          /* line 488, SelfserviceBar/css/style.scss */
+          header.homepage__header .header--right__link a .arrow:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%) rotate(-45deg);
+            border-right: 2px solid var(--clr);
+            width: 7px;
+            height: 7px; }
+
+/* line 505, SelfserviceBar/css/style.scss */
+main.homepage__main {
+  width: 100%;
+  height: 100vh; }
+  /* line 510, SelfserviceBar/css/style.scss */
+  main.homepage__main .site-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    margin: 0 auto; }
+    /* line 518, SelfserviceBar/css/style.scss */
+    main.homepage__main .site-about__title {
+      margin-bottom: 100px; }
+      /* line 522, SelfserviceBar/css/style.scss */
+      main.homepage__main .site-about__title h2 {
+        font-size: 5rem;
+        font-weight: 400; }
+    /* line 526, SelfserviceBar/css/style.scss */
+    main.homepage__main .site-about__content {
+      text-align: center;
+      line-height: 1.6; }
+
+/* ========== HOMEPAGE END ========== */
+/* ========== RECIPES SITE BEGIN ========== */
+/* line 537, SelfserviceBar/css/style.scss */
+header.recipes__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  margin-top: 60px; }
+  /* line 545, SelfserviceBar/css/style.scss */
+  header.recipes__header h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: 10px; }
+
+/* line 547, SelfserviceBar/css/style.scss */
+main.recipes__main {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 400px);
+  grid-gap: 60px 30px;
+  width: 90%;
+  max-width: 1250px;
+  height: 100%;
+  margin: auto;
+  margin-bottom: 100px; }
+  /* line 562, SelfserviceBar/css/style.scss */
+  main.recipes__main .card {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+    /* line 568, SelfserviceBar/css/style.scss */
+    main.recipes__main .card a {
+      position: relative;
+      display: flex;
+      flex-direction: colum;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; }
+      /* line 578, SelfserviceBar/css/style.scss */
+      main.recipes__main .card a:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0;
+        transition: 0.2s; }
+      /* line 591, SelfserviceBar/css/style.scss */
+      main.recipes__main .card a img {
+        transition: 0.3s; }
+      /* line 595, SelfserviceBar/css/style.scss */
+      main.recipes__main .card a .card__content {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 80%;
+        color: #fff;
+        text-align: center;
+        opacity: 0;
+        transition: 0.3s; }
+        /* line 611, SelfserviceBar/css/style.scss */
+        main.recipes__main .card a .card__content h3 {
+          font-weight: 300; }
+        /* line 615, SelfserviceBar/css/style.scss */
+        main.recipes__main .card a .card__content:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform: scaleX(0);
+          border-top: 1px solid #fff;
+          border-bottom: 1px solid #fff;
+          transition: 0.4s;
+          transition-delay: 0.3s; }
+        /* line 628, SelfserviceBar/css/style.scss */
+        main.recipes__main .card a .card__content:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform: scaleY(0);
+          border-left: 1px solid #fff;
+          border-right: 1px solid #fff;
+          transition: 0.4s;
+          transition-delay: 0.3s; }
+      /* line 649, SelfserviceBar/css/style.scss */
+      main.recipes__main .card a:hover:before {
+        opacity: 0.6; }
+      /* line 653, SelfserviceBar/css/style.scss */
+      main.recipes__main .card a:hover img {
+        width: 120%;
+        height: 120%; }
+      /* line 657, SelfserviceBar/css/style.scss */
+      main.recipes__main .card a:hover .card__content {
+        opacity: 1;
+        transition-delay: 0.3s; }
+        /* line 661, SelfserviceBar/css/style.scss */
+        main.recipes__main .card a:hover .card__content:before {
+          transform: scaleX(0.9); }
+        /* line 662, SelfserviceBar/css/style.scss */
+        main.recipes__main .card a:hover .card__content:after {
+          transform: scaleY(0.9); }
+
+@media only screen and (max-width: 1024px) and (min-width: 481px) {
+  /* line 672, SelfserviceBar/css/style.scss */
+  main.recipes__main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 400px);
+    width: 80%; } }
+
+@media only screen and (max-width: 480px) {
+  /* line 683, SelfserviceBar/css/style.scss */
+  header.recipes__header {
+    height: 200px; }
+    /* line 687, SelfserviceBar/css/style.scss */
+    header.recipes__header h1 {
+      font-size: 2rem; }
+  /* line 690, SelfserviceBar/css/style.scss */
+  main.recipes__main {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 400px);
+    width: 70%;
+    margin-bottom: 50px; } }
+
+/* ========== RECIPES SITE END ========== */
+/* ========== ABOUT SITE BEGIN ========== */
+/* line 706, SelfserviceBar/css/style.scss */
+.about {
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  width: 100%;
+  height: calc(100vh - 60px);
+  margin-top: 60px; }
+  /* line 716, SelfserviceBar/css/style.scss */
+  .about__img {
+    border-left: 1px solid var(--clr);
+    width: 100%;
+    height: 100%;
+    z-index: -1; }
+  /* line 725, SelfserviceBar/css/style.scss */
+  .about__content {
+    width: 100%;
+    height: 100%; }
+    /* line 730, SelfserviceBar/css/style.scss */
+    .about__content__header {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid var(--clr);
+      width: 100%;
+      height: 100px; }
+      /* line 738, SelfserviceBar/css/style.scss */
+      .about__content__header h2 {
+        font-size: 3rem;
+        font-weight: 400; }
+    /* line 743, SelfserviceBar/css/style.scss */
+    .about__content__text {
+      padding: 50px; }
+      /* line 747, SelfserviceBar/css/style.scss */
+      .about__content__text p {
+        margin: 15px 0;
+        line-height: 1.7; }
+
+@media only screen and (max-width: 1024px) and (min-width: 481px) {
+  /* line 755, SelfserviceBar/css/style.scss */
+  .about {
+    display: block;
+    height: auto; }
+    /* line 761, SelfserviceBar/css/style.scss */
+    .about__img {
+      border-left: 0;
+      border-top: 1px solid var(--clr); } }
+
+@media only screen and (max-width: 480px) {
+  /* line 768, SelfserviceBar/css/style.scss */
+  .about {
+    display: block;
+    height: auto; }
+    /* line 774, SelfserviceBar/css/style.scss */
+    .about__img {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border-left: 0;
+      border-top: 1px solid var(--clr); } }
+
+/* ========== ABOUT SITE END ========== */
+/* ========== CONTACT SITE BEGIN ========== */
+/* line 790, SelfserviceBar/css/style.scss */
+.contact {
+  width: 90%;
+  max-width: 1250px;
+  margin: 60px auto; }
+  /* line 797, SelfserviceBar/css/style.scss */
+  .contact__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    margin: 0 auto; }
+    /* line 805, SelfserviceBar/css/style.scss */
+    .contact__header h1 {
+      font-size: 7rem;
+      font-weight: 400; }
+  /* line 810, SelfserviceBar/css/style.scss */
+  .contact__container {
+    display: grid;
+    grid-template-columns: 4fr 3fr 6fr;
+    width: 100%; }
+    /* line 818, SelfserviceBar/css/style.scss */
+    .contact__container .space {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      font-size: 1.3rem; }
+    /* line 827, SelfserviceBar/css/style.scss */
+    .contact__container .contact__methods {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem; }
+      /* line 833, SelfserviceBar/css/style.scss */
+      .contact__container .contact__methods a {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin: 25px 0; }
+        /* line 840, SelfserviceBar/css/style.scss */
+        .contact__container .contact__methods a span:first-child {
+          margin-right: 10px;
+          font-size: 0.9rem;
+          font-weight: 700; }
+    /* line 846, SelfserviceBar/css/style.scss */
+    .contact__container .contact__form form {
+      width: 100%;
+      height: 100%; }
+      /* line 851, SelfserviceBar/css/style.scss */
+      .contact__container .contact__form form fieldset:nth-child(1), .contact__container .contact__form form fieldset:nth-child(2) {
+        display: flex;
+        flex-direction: row;
+        justify-content: none;
+        align-items: center;
+        border: none;
+        border-bottom: 1px solid var(--clr); }
+        /* line 859, SelfserviceBar/css/style.scss */
+        .contact__container .contact__form form fieldset:nth-child(1) label, .contact__container .contact__form form fieldset:nth-child(2) label {
+          width: 60px;
+          font-size: 0.8rem;
+          font-weight: 700; }
+        /* line 868, SelfserviceBar/css/style.scss */
+        .contact__container .contact__form form fieldset:nth-child(1) input, .contact__container .contact__form form fieldset:nth-child(2) input {
+          border: none;
+          width: 100%;
+          height: 40px;
+          margin-left: 15px;
+          font-family: 'Roboto Mono', monospace;
+          font-size: 1rem; }
+          /* line 879, SelfserviceBar/css/style.scss */
+          .contact__container .contact__form form fieldset:nth-child(1) input:focus, .contact__container .contact__form form fieldset:nth-child(2) input:focus {
+            border: none; }
+      /* line 885, SelfserviceBar/css/style.scss */
+      .contact__container .contact__form form fieldset:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+        justify-content: none;
+        align-items: flex-start;
+        border: none;
+        width: 100%;
+        height: 200px;
+        margin: 10px 0;
+        padding: 10px 0; }
+        /* line 896, SelfserviceBar/css/style.scss */
+        .contact__container .contact__form form fieldset:nth-child(3) label {
+          font-size: 0.8rem;
+          font-weight: 700; }
+        /* line 899, SelfserviceBar/css/style.scss */
+        .contact__container .contact__form form fieldset:nth-child(3) textarea {
+          width: 100%;
+          height: 100%;
+          margin-top: 10px;
+          padding: 10px;
+          font-family: 'Roboto Mono', monospace;
+          font-size: 1rem; }
+      /* line 912, SelfserviceBar/css/style.scss */
+      .contact__container .contact__form form button {
+        border: none;
+        width: 100%;
+        padding: 15px;
+        background: var(--clr);
+        color: var(--bg);
+        font-family: 'Roboto Mono', monospace;
+        font-size: 0.8rem;
+        font-weight: 700; }
+
+@media only screen and (max-width: 1024px) and (min-width: 481px) {
+  /* line 935, SelfserviceBar/css/style.scss */
+  .contact__header {
+    height: 200px; }
+  /* line 936, SelfserviceBar/css/style.scss */
+  .contact__header h1 {
+    font-size: 5rem; }
+  /* line 940, SelfserviceBar/css/style.scss */
+  .contact__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 6fr; } }
+
+@media only screen and (max-width: 480px) {
+  /* line 954, SelfserviceBar/css/style.scss */
+  .contact__header {
+    height: 200px; }
+  /* line 955, SelfserviceBar/css/style.scss */
+  .contact__header h1 {
+    font-size: 3rem; }
+  /* line 959, SelfserviceBar/css/style.scss */
+  .contact__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 6fr; } }
+
+/* ========== CONTACT SITE END ========== */
+/* ========== DRINKS SITE BEGIN ========== */
+/* line 975, SelfserviceBar/css/style.scss */
+.drinks__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--clr);
+  width: 100%;
+  height: 100vh; }
+  /* line 984, SelfserviceBar/css/style.scss */
+  .drinks__header__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: none;
+    align-items: center;
+    width: 50%;
+    height: 100%; }
+    /* line 991, SelfserviceBar/css/style.scss */
+    .drinks__header__title h1 {
+      font-size: 7rem; }
+  /* line 996, SelfserviceBar/css/style.scss */
+  .drinks__header .drinks__header__img {
+    width: 400px;
+    height: 550px; }
+
+/* line 1004, SelfserviceBar/css/style.scss */
+main.drinks__main .ingredients {
+  border-bottom: 1px solid var(--clr);
+  width: 100%; }
+  /* line 1010, SelfserviceBar/css/style.scss */
+  main.drinks__main .ingredients__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--clr);
+    width: 100%;
+    height: 150px; }
+    /* line 1018, SelfserviceBar/css/style.scss */
+    main.drinks__main .ingredients__title h2 {
+      font-size: 3rem;
+      font-weight: 400; }
+  /* line 1023, SelfserviceBar/css/style.scss */
+  main.drinks__main .ingredients__content {
+    display: grid;
+    grid-template-columns: auto 400px;
+    width: 100%; }
+    /* line 1031, SelfserviceBar/css/style.scss */
+    main.drinks__main .ingredients__content__text {
+      border-right: 1px solid var(--clr);
+      min-height: 450px; }
+      /* line 1036, SelfserviceBar/css/style.scss */
+      main.drinks__main .ingredients__content__text .text-items {
+        display: grid;
+        grid-template-columns: 100px 2fr 1fr;
+        border-bottom: 1px solid var(--clr);
+        width: 100%;
+        height: 70px;
+        transition: 0.1s;
+        /*&:last-child {border-bottom: none;}*/ }
+        /* line 1048, SelfserviceBar/css/style.scss */
+        main.drinks__main .ingredients__content__text .text-items:hover, main.drinks__main .ingredients__content__text .text-items.active {
+          background: var(--clr);
+          color: var(--bg); }
+        /* line 1056, SelfserviceBar/css/style.scss */
+        main.drinks__main .ingredients__content__text .text-items div {
+          width: 100%;
+          height: 100%; }
+        /* line 1060, SelfserviceBar/css/style.scss */
+        main.drinks__main .ingredients__content__text .text-items__number {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+          padding: 0 10px;
+          font-family: 'Courier New';
+          font-size: 1.5rem;
+          font-weight: 700;
+          text-align: right; }
+        /* line 1073, SelfserviceBar/css/style.scss */
+        main.drinks__main .ingredients__content__text .text-items__name {
+          display: flex;
+          flex-direction: row;
+          justify-content: unset;
+          align-items: center;
+          padding-left: 10px; }
+        /* line 1077, SelfserviceBar/css/style.scss */
+        main.drinks__main .ingredients__content__text .text-items__amount {
+          display: flex;
+          flex-direction: row;
+          justify-content: unset;
+          align-items: center; }
+    /* line 1083, SelfserviceBar/css/style.scss */
+    main.drinks__main .ingredients__content__img {
+      position: relative;
+      width: 100%;
+      height: 100%; }
+      /* line 1089, SelfserviceBar/css/style.scss */
+      main.drinks__main .ingredients__content__img li {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: 0.5s; }
+        /* line 1096, SelfserviceBar/css/style.scss */
+        main.drinks__main .ingredients__content__img li.active {
+          opacity: 1;
+          transition-delay: 0.2s; }
+
+/* line 1104, SelfserviceBar/css/style.scss */
+main.drinks__main .steps {
+  border-bottom: 1px solid var(--clr); }
+  /* line 1108, SelfserviceBar/css/style.scss */
+  main.drinks__main .steps__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--clr);
+    width: 100%;
+    height: 150px; }
+    /* line 1116, SelfserviceBar/css/style.scss */
+    main.drinks__main .steps__header h2 {
+      font-size: 3rem;
+      font-weight: 400; }
+  /* line 1121, SelfserviceBar/css/style.scss */
+  main.drinks__main .steps__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    align-items: center;
+    min-height: 400px;
+    padding: 25px; }
+    /* line 1128, SelfserviceBar/css/style.scss */
+    main.drinks__main .steps__content ul li {
+      display: grid;
+      grid-template-columns: 40px auto;
+      padding: 15px 0; }
+      /* line 1135, SelfserviceBar/css/style.scss */
+      main.drinks__main .steps__content ul li span {
+        font-family: 'Courier New';
+        font-size: 1.5rem;
+        font-weight: 700; }
+
+/* line 1142, SelfserviceBar/css/style.scss */
+main.drinks__main .results {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; }
+  /* line 1149, SelfserviceBar/css/style.scss */
+  main.drinks__main .results__img {
+    width: 400px;
+    height: 550px; }
+
+@media only screen and (max-width: 1024px) and (min-width: 481px) {
+  /* line 1156, SelfserviceBar/css/style.scss */
+  .drinks__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 60px 0; }
+    /* line 1163, SelfserviceBar/css/style.scss */
+    .drinks__header__title {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      height: auto;
+      margin: 50px auto; }
+      /* line 1170, SelfserviceBar/css/style.scss */
+      .drinks__header__title h1 {
+        font-size: 5rem; } }
+
+@media only screen and (max-width: 480px) {
+  /* line 1178, SelfserviceBar/css/style.scss */
+  .drinks__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 60px 0; }
+    /* line 1185, SelfserviceBar/css/style.scss */
+    .drinks__header__title {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: auto;
+      margin: 50px auto; }
+      /* line 1192, SelfserviceBar/css/style.scss */
+      .drinks__header__title h1 {
+        font-size: 3rem; }
+    /* line 1197, SelfserviceBar/css/style.scss */
+    .drinks__header__img {
+      width: 200px;
+      height: 270px; } }
+
+/* ========== DRINKS SITE END ========== */
+
+/*# sourceMappingURL=style.css.map */
